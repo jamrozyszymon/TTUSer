@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block article %}
+    <div class="mb-2">
+        <a class="btn btn-secondary" href ="{{path('user_import')}}">Import</a>
+        <a class="btn btn-secondary" href ="{{path('user_add')}}">Dodaj</a>
+    </div>
+
+        {{ render(controller("App\\Controller\\UserController::displayUser")) }}
+
+{% endblock %}

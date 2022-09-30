@@ -1,0 +1,77 @@
+{% block article %}
+	<h1> Lista użytkowników </h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Imię i Nazwisko</th>
+				<th scope="col">Nazwa</th>
+				<th scope="col">E-mail</th>
+				<th scope="col">Telefon</th>
+				<th scope="col">Witryna</th>
+				<th scope="col">Ulica</th>
+				<th scope="col">Numer</th>
+				<th scope="col">Miasto</th>
+				<th scope="col">Kod</th>
+				<th scope="col">Sz. G.</th>
+				<th scope="col">Dł. G</th>
+				<th scope="col">Nazwa</th>
+				<th scope="col">Hasło</th>
+				<th scope="col">BS</th>
+			</tr>
+		</thead>
+		<tbody class="table-group-divider">
+			{% for user in users %}
+				<tr>
+					<td>
+						{{ user.id }}
+					</td>
+					<td>
+						{{ user.name }}
+					</td>
+					<td>
+						{{ user.username }}
+					</td>
+					<td>
+						{{ user.email }}
+					</td>
+					<td>
+						{{ user.phone }}
+					</td>
+					<td>
+						{{ user.website }}
+					</td>
+					<td>
+						{{ user.getAddress.street}}
+					</td>
+					<td>
+						{{ user.getAddress.suite}}
+					</td>
+					<td>
+						{{ user.getAddress.city}}
+					</td>
+					<td>
+						{{ user.getAddress.zipcode}}
+					</td>
+					<td>
+						{{ user.getAddress.getGeos.lat}}
+					</td>
+					<td>
+						{{ user.getAddress.getGeos.lng}}
+					</td>
+					<td>
+						{{ user.getCompanies.name}}
+					</td>
+					<td>
+						{{ user.getCompanies.catchPhrase}}
+					</td>
+					<td>
+						{{ user.getCompanies.bs}}
+					</td>
+
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
